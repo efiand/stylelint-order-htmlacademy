@@ -1,0 +1,13 @@
+{
+  "name": "stylelint-order-htmlacademy",
+  "version": "0.0.1",
+  "license": "ISC",
+  "repository": "git@github.com:efiand/stylelint-order-htmlacademy.git",
+  "scripts": {
+    "postinstall": "node index -u"
+  },
+  "dependencies": {
+    "node-fetch": "^2.5.0",
+    "stylelint-order": "^3.0.0"
+  }
+}
