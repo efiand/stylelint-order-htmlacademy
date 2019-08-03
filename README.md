@@ -4,33 +4,28 @@
 
 ## Установка
 
-```bash
+```
 npm install --save-dev stylelint-order-htmlacademy
 ```
 
 ## Использование
 
-В конфиг stylelint (например, `.stylelintrc`) внесите изменения:
+В конфиг stylelint (например, `.stylelintrc`) внесите:
 
-
-```json
+```
 {
-  "extends": "stylelint-order-htmlacademy",
-  ...
+  "extends": [
+    "stylelint-order-htmlacademy"
+  ]
 }
 ```
 
-Или:
+## Обновление
 
+Запустите из корня проекта:
 
-```json
-{
-  "extends": [
-    ...
-    "stylelint-order-htmlacademy"
-  ],
-  ...
-}
+```
+node node_modules/stylelint-order-htmlacademy -u
 ```
 
 ## Благодарности
