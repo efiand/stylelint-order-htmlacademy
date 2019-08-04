@@ -4,13 +4,14 @@
 if (~process.argv.indexOf('-u')) {
   const fs = require('fs');
   const fetch = require('node-fetch');
-  const packageName = 'stylelint-order-htmlacademy';
+  const packageName = '[stylelint-order-htmlacademy]';
+  const dirname = __dirname.replace(/\\/g, '/');
   
   fetch('https://raw.githubusercontent.com/htmlacademy/codeguide/master/.postcss-sorting.json')
   .then((res) => res.json())
   .then((body) => {
     const data = JSON.stringify(body['properties-order']);
-    fs.writeFile('sorting.json', data, () => {
+    fs.writeFile(dirname + '/sorting.json', data, () => {
       console.info(packageName + ': properties list successfully updated!');
     });
   })
