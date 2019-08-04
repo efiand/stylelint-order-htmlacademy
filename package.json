@@ -1,6 +1,6 @@
 {
   "name": "stylelint-order-htmlacademy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "ISC",
   "repository": "git@github.com:efiand/stylelint-order-htmlacademy.git",
   "scripts": {
