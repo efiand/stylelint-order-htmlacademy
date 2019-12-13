@@ -1,4 +1,5 @@
 # stylelint-order-htmlacademy
+[![npm version](https://img.shields.io/npm/v/stylelint-order-htmlacademy.svg)](https://www.npmjs.com/package/stylelint-order-htmlacademy)
 
 Настройки проверки сортировки CSS-свойств с помощью stylelint по [актуальному кодгайду](https://github.com/htmlacademy/codeguide/blob/master/.postcss-sorting.json) HTML Academy.
 
