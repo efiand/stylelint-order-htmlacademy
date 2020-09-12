@@ -5,7 +5,7 @@
 ## Установка
 
 ```
-npm install --save-dev stylelint-order-htmlacademy
+npm i -DE stylelint-order-htmlacademy
 ```
 
 ## Использование

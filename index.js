@@ -1,34 +1,14 @@
 'use strict';
 
-// обновление настроек из репозитория кодгайда HTML Academy
-if (~process.argv.indexOf('-u')) {
-  const fs = require('fs');
-  const fetch = require('node-fetch');
-  const packageName = '[stylelint-order-htmlacademy]';
-  const dirname = __dirname.replace(/\\/g, '/');
-  
-  fetch('https://raw.githubusercontent.com/htmlacademy/codeguide/master/.postcss-sorting.json')
-  .then((res) => res.json())
-  .then((body) => {
-    const data = JSON.stringify(body['properties-order']);
-    fs.writeFile(dirname + '/sorting.json', data, () => {
-      console.info(packageName + ': properties list successfully updated!');
-    });
-  })
-  .catch(() => {
-    console.error(packageName + ': update error, run "stylelint-order-htmlacademy -u"');
-  });
+if (process.argv.indexOf(`-u`) !== -1) {
+  require(`./update`)((body) => body[`properties-order`]);
 }
 
 module.exports = {
-  plugins: [
-    'stylelint-order'
-  ],
+  plugins: [`stylelint-order`],
   rules: {
-    'order/properties-order': [
-      {
-        properties: require('./sorting.json')
-      }
-    ]
+    'order/properties-order': [{
+      properties: require(`./data.json`)
+    }]
   }
 };
