@@ -22,7 +22,7 @@ const update = async (cb) => {
 		console.info(packagePrefix + green(`Data was successfully updated!`));
 		process.exit(0);
 	} catch (err) {
-		console.error(packagePrefix + red(`Update error, run "${name} -u"`));
+		console.error(packagePrefix + red(`Update error, run "node node_modules/${name} -u"`));
 		process.exit(1);
 	}
 };
