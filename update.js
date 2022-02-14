@@ -1,11 +1,7 @@
-'use strict';
-
-const { writeFile } = require(`fs`).promises;
-const fetch = require(`node-fetch`);
-const { cyan, green, red } = require(`chalk`);
-const { name, sourceUrl, version } = require(`./package.json`);
-const packagePrefix = cyan(`[${name} ${version}]: `);
-const dirname = __dirname.replace(/\\/g, `/`);
+import fetch from 'node-fetch';
+import chalk from 'chalk';
+import { fs, getJSON, __dirname } from './esm.js';
+const { cyan, green, red } = chalk;
 
 /**
  * Обновление настроек из удаленного источника
@@ -13,18 +9,22 @@ const dirname = __dirname.replace(/\\/g, `/`);
  * @param {Function} cb
  */
 const update = async (cb) => {
+	const { name, sourceUrl, version } = await getJSON(`${__dirname}/package.json`);
+	const packagePrefix = cyan(`[${name} ${version}]: `);
+
 	let data = {};
 	try {
 		const res = await fetch(sourceUrl);
 		const body = await res.json();
 		data = JSON.stringify(cb(body));
-		await writeFile(`${dirname}/data.json`, data);
+		await fs.writeFile(`${__dirname}/data.json`, data);
 		console.info(packagePrefix + green(`Data was successfully updated!`));
 		process.exit(0);
 	} catch (err) {
+		console.error(err);
 		console.error(packagePrefix + red(`Update error, run "node node_modules/${name} -u"`));
 		process.exit(1);
 	}
 };
 
-module.exports = update;
+export default update;
