@@ -1,6 +1,6 @@
 {
   "name": "stylelint-order-htmlacademy",
-  "version": "2.0.3",
+  "version": "2.0.6",
   "license": "ISC",
   "repository": "git@github.com:efiand/stylelint-order-htmlacademy.git",
   "sourceUrl": "https://raw.githubusercontent.com/htmlacademy/codeguide/master/.postcss-sorting.json",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "chalk": "4.1.0",
-    "node-fetch": "2.6.1",
+    "node-fetch": "2.6.7",
     "stylelint-order": "4.1.0"
   }
 }
