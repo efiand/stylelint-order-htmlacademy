@@ -1,14 +1,13 @@
-'use strict';
+import update from './update.js';
+import properties from './properties.js';
 
 if (process.argv.indexOf(`-u`) !== -1) {
-  require(`./update`)((body) => body[`properties-order`]);
+  update((body) => body[`properties-order`]);
 }
 
-module.exports = {
+export default {
   plugins: [`stylelint-order`],
   rules: {
-    'order/properties-order': [{
-      properties: require(`./data.json`)
-    }]
+    'order/properties-order': [{ properties }]
   }
 };

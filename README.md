@@ -10,7 +10,7 @@ npm i -DE stylelint-order-htmlacademy
 
 ## Использование
 
-В конфиг stylelint (например, `.stylelintrc`) внесите:
+В конфиг stylelint (например, `stylelint.config.js`) внесите:
 
 ```
 {
